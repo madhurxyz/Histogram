@@ -5,7 +5,8 @@ def get_words_list(file_name):
   f= open(file_name)
   lines = f.readlines()
   word_string = ' '.join(lines)
-  return word_string
+  words_list = word_string.split()
+  return words_list
 
 def my_app():
     words_list = get_words_list('holmes.txt')
