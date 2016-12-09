@@ -3,7 +3,10 @@ import sys
 
 def remove_punctuation(word_string):
     punctuations = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94'
-    no_punctuation = word_string
+    no_punctuation = ''
+    for character in word_string:
+        if character not in punctuations:
+            no_punctuation += character
     return no_punctuation
 
 def get_words_list(file_name):
