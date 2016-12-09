@@ -1,11 +1,17 @@
 import time
 import sys
 
+def remove_punctuation(word_string):
+    punctuations = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94'
+    no_punctuation = word_string
+    return no_punctuation
+
 def get_words_list(file_name):
   f= open(file_name)
   lines = f.readlines()
   word_string = ' '.join(lines)
-  words_list = word_string.split()
+  no_punctuation = remove_punctuation(word_string)
+  words_list = no_punctuation.split()
   return words_list
 
 def my_app():
