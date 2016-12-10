@@ -4,7 +4,8 @@ import sys
 def get_unique_words(histogram):
     unique_words = {}
     for word in histogram:
-        unique_words[word] = histogram[word]
+        if histogram[word] == 1:
+            unique_words[word] = histogram[word]
     return len(unique_words)
 
 def create_histogram(words_list):
