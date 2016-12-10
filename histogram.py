@@ -1,6 +1,13 @@
 import time
 import sys
 
+def create_histogram(words_list):
+    histogram = {}
+    for word in words_list:
+        histogram[word] = 1
+    return histogram
+
+
 def remove_punctuation(word_string):
     punctuations = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94'
     no_punctuation = ''
@@ -19,7 +26,8 @@ def get_words_list(file_name):
 
 def my_app():
     words_list = get_words_list('holmes.txt')
-    print words_list
+    histogram = create_histogram(words_list)
+    print histogram
 
 
 
