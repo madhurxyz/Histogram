@@ -1,6 +1,10 @@
 import time
 import sys
 
+def get_frequency(word, histogram):
+    frequency = histogram[word]
+    return frequency
+
 def get_unique_words(histogram):
     unique_words = {}
     for word in histogram:
@@ -40,6 +44,7 @@ def my_app():
     histogram = create_histogram(words_list)
     # print histogram
     unique_words = get_unique_words(histogram)
+    frequency = get_frequency('to', histogram)
 
 
 
