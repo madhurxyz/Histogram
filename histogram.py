@@ -1,6 +1,13 @@
 import time
 import sys
 
+def create_file(name, histogram):
+    f = open(name, 'w')
+    for word in histogram:
+        f.write(str(word) + ' ' + str(histogram[word]) + '\n')
+    f.close()
+    return f
+    
 def get_frequency(word, histogram):
     frequency = histogram[word]
     return frequency
@@ -45,6 +52,7 @@ def my_app():
     # print histogram
     unique_words = get_unique_words(histogram)
     frequency = get_frequency('to', histogram)
+    text_file = create_file('histogram.txt', histogram)
 
 
 
