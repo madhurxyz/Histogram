@@ -1,6 +1,12 @@
 import time
 import sys
 
+def get_unique_words(histogram):
+    unique_words = {}
+    for word in histogram:
+        unique_words[word] = histogram[word]
+    return len(unique_words)
+
 def create_histogram(words_list):
     histogram = {}
     for word in words_list:
@@ -31,7 +37,8 @@ def get_words_list(file_name):
 def my_app():
     words_list = get_words_list('holmes.txt')
     histogram = create_histogram(words_list)
-    print histogram
+    # print histogram
+    unique_words = get_unique_words(histogram)
 
 
 
