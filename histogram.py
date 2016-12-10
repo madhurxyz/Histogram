@@ -4,7 +4,11 @@ import sys
 def create_histogram(words_list):
     histogram = {}
     for word in words_list:
-        histogram[word] = 1
+        if word in histogram:
+            count = histogram[word]
+            histogram[word] = count + 1
+        else:
+            histogram[word] = 1
     return histogram
 
 
